@@ -269,8 +269,10 @@ docker pull pme763/mcp:latest
 docker run -d \
   --name zabbix-mcp-server \
   -p 8000:8000 \
+  -v "$(pwd)/logs:/app/logs" \
   -e ZABBIX_URL=https://zabbix.example.com \
   -e ZABBIX_TOKEN=your_token_here \
+  -e READ_ONLY=true \
   pme763/mcp:latest
 ```
 
