@@ -256,6 +256,24 @@ This server is designed to work with MCP-compatible clients like Claude Desktop.
 
 ### Using Docker Compose
 
+### Using Docker Hub (Public Image)
+
+You can pull and run the official image directly from Docker Hub:
+
+```bash
+docker pull pme763/mcp:latest
+```
+
+**Run with environment variables:**
+```bash
+docker run -d \
+  --name zabbix-mcp-server \
+  -p 8000:8000 \
+  -e ZABBIX_URL=https://zabbix.example.com \
+  -e ZABBIX_TOKEN=your_token_here \
+  pme763/mcp:latest
+```
+
 1. **Configure environment:**
    ```bash
    cp config/.env.example .env
